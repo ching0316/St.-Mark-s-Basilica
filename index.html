@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: light)">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ching0316.github.io/St.-Mark-s-Basilica/apple-touch-icon.png">
 
     <title>聖馬可大教堂 St. Mark's Basilica｜語音導覽</title>
     <!-- Tailwind CSS -->
@@ -215,7 +216,13 @@
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 p-0.5 shadow-lg shadow-yellow-500/20 flex items-center justify-center shrink-0">
                         <div class="w-full h-full bg-black rounded-[7px] flex items-center justify-center p-1">
-                            <i data-lucide="church" class="w-5 h-5 text-ferrari-yellow"></i>
+                            <img 
+                              src="https://ching0316.github.io/St.-Mark-s-Basilica/apple-touch-icon.png" 
+                              alt="Ferrari Shield Logo" 
+                              class="w-full h-full object-contain"
+                              onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                            />
+                            <i data-lucide="shield" class="w-5 h-5 text-ferrari-yellow hidden"></i>
                         </div>
                     </div>
                     <div class="flex flex-col justify-center">
@@ -613,7 +620,7 @@
                 room: '01 點位',
                 roomCode: '01',
                 img: 'https://cdn4.tuscanynowandmore.com/storage/app/media/discover-italy/st-mark-church-venice.jpg',
-                audioText: '歡迎來到聖馬可大教堂。眼前這座教堂最令人印象深刻的特色，就是它不像典型的西歐教堂，而帶有非常強烈的拜占庭氣息。聖馬可大教堂的核心概念，可以用三個字理解：「金、光、東方。」大量金色馬賽克覆蓋牆面與穹頂，讓整座教堂不像是在觀看普通的壁畫，而像走進一座由黃金與光線構成的聖殿。今天不要急著抬頭看完所有東西。先讓眼睛適應昏暗的室內，感受金色馬賽克、深色大理石與高聳穹頂共同形成的神秘氣氛。',
+                audioText: '歡迎來到聖馬可大教堂。眼前這座教堂最令人印象深刻的特色，就是它不像典型的西歐教堂，而帶有非常強烈的拜占庭氣息。聖馬可大教堂的核心概念，可以用三個字理解：「金、光、東方」。大量金色馬賽克覆蓋牆面與穹頂，讓整座教堂不像是在觀看普通的壁畫，而像走進一座由黃金與光線構成的聖殿。今天不要急著抬頭看完所有東西。先讓眼睛適應昏暗的室內，感受金色馬賽克、深色大理石與高聳穹頂共同形成的神秘氣氛。',
                 highlights: [
                     '先站在入口附近，回頭看整個中殿空間',
                     '注意大量金色馬賽克與深色大理石形成的反差',
@@ -1124,7 +1131,7 @@
         function updatePlayerBarUI() {
             if (!currentArtwork) return;
             document.getElementById('player-thumb').src = currentArtwork.img;
-            document.getElementById('player-room').innerText = `${currentArtwork.roomCode} 點位`;
+            document.getElementById('player-room').innerText = currentArtwork.roomCode`;
             document.getElementById('player-title').innerText = currentArtwork.title;
             document.getElementById('player-artist').innerText = currentArtwork.artist;
         }
